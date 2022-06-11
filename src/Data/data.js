@@ -100,7 +100,7 @@ const teamData = [
     name: "Som Chettri",
     post: "Investor",
     image:
-      "https://video.fktm1-1.fna.fbcdn.net/v/t1.15752-9/286092839_3224433694504717_1903716145447971679_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=t_Xw8jvBy5gAX89bkZc&tn=A6zgxIs3oLBd3Z1y&_nc_ht=video.fktm1-1.fna&oh=03_AVJy2L3noX5iYNwIMV8WUbTJCcssopn8hQ1FLVfj9tozhA&oe=62C9B1A5",
+      "https://video.fktm1-2.fna.fbcdn.net/v/t1.15752-9/286753985_694906388234096_4906672359546755249_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=ae9488&_nc_ohc=C1eNR7jjIM0AX_QBB42&_nc_ht=video.fktm1-2.fna&oh=03_AVKvHX_zMMo3BoXfoEBCt34WcBG2p8nlGzjYv5cpB7_Arw&oe=62C8E4E0",
     about:
       "DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware",
     facebook: "https://facebook.com",

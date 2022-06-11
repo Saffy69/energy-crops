@@ -15,6 +15,13 @@ const productsData = [
     name: "Oval Tray",
     price: "$205.00",
   },
+  {
+    id: 3,
+    image: "blob:https://web.whatsapp.com/6e8d9ad3-1d8a-4ae4-8827-00db65f0478b",
+    category: "Medium",
+    name: "Oval Tray",
+    price: "$205.00",
+  },
 ];
 
 export default productsData;

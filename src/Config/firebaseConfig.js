@@ -23,6 +23,7 @@ const firebaseConfig = {
   messagingSenderId: "948574451865",
   appId: "1:948574451865:web:a9b4e33c835d8ca542e008",
 };
+const googleProvider = new GoogleAuthProvider();
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
@@ -32,6 +33,15 @@ export async function signUp(email, password) {
   await createUserWithEmailAndPassword(auth, email, password);
 }
 
+export async function singInWithGoogle() {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    console.log(credential);
+  } catch (err) {
+    const errorMesage = err.message;
+  }
+}
 export async function signIn(email, password) {
   await signInWithEmailAndPassword(auth, email, password);
 }
@@ -40,7 +50,7 @@ export function logOut() {
 }
 export function forgotPassword(email) {
   return sendPasswordResetEmail(auth, email, {
-    url: "http://localhost:3000/sign-in",
+    url: "http://energy-crops-arjundhara.netlify.app/sign-in",
   });
 }
 export function useAuth() {

@@ -11,10 +11,10 @@ export default function Home() {
             Energy crops
           </h1>
           <p className="mb-8 leading-relaxed">
-            We started on our project a long time ago. The start of this project
-            was to have a clear concept about the plastic production having an
-            adverse effect on human life. After all of that we came up with a
-            motive that was to produce biodergadable products.
+            We started our project on 22,september,2021. The start of this
+            project was to have a clear concept about the plastic production
+            having an adverse effect on human life. After all of that we came up
+            with a motive that was to produce biodergadable products.
           </p>
         </div>
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

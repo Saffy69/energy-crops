@@ -30,7 +30,7 @@ export default function Plates() {
                     alt={name}
                   />
                   <h3 className="tracking-widest text-indigo-400 text-xs font-medium title-font">
-                    {price}
+                    {price}.00
                   </h3>
                   <h2 className="text-lg text-white font-medium title-font mb-4">
                     {name}

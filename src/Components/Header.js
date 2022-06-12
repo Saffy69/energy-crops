@@ -19,15 +19,18 @@ export default function Header() {
           <span className="ml-3 text-xl">Energy-Crops</span>
         </p>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <p className="mr-5 hover:text-white">
-            <Link to="/">Home</Link>
-          </p>
-          <p className="mr-5 hover:text-white">
-            <Link to="/about">About</Link>
-          </p>
-          <p className="mr-5 hover:text-white">
-            <Link to="/contact">Contact</Link>
-          </p>
+          <Link to="/">
+            <p className="mr-5 hover:text-white">Home</p>
+          </Link>
+          <Link to="/about">
+            <p className="mr-5 hover:text-white">About</p>
+          </Link>
+          <Link to="/contact">
+            <p className="mr-5 hover:text-white">Contact</p>
+          </Link>
+          <Link to="/products">
+            <p className="mr-5 hover:text-white">Products</p>
+          </Link>
         </nav>
         {currentUser ? (
           <Link to="/user">

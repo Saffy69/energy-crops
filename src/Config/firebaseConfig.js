@@ -10,7 +10,8 @@ import {
   signOut,
   sendPasswordResetEmail,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -33,14 +34,27 @@ export async function signUp(email, password) {
   await createUserWithEmailAndPassword(auth, email, password);
 }
 
-export async function singInWithGoogle() {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    console.log(credential);
-  } catch (err) {
-    const errorMesage = err.message;
-  }
+export function singInWithGoogle() {
+  signInWithRedirect(auth, googleProvider);
+  getRedirectResult(auth)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access Google APIs.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      // The signed-in user info.
+      const user = result.user;
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
 }
 export async function signIn(email, password) {
   await signInWithEmailAndPassword(auth, email, password);

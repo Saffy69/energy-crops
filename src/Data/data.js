@@ -28,7 +28,7 @@ const teamData = [
     name: "kalyan Kattel",
     post: "Founder",
     image:
-      "https://video.fktm1-2.fna.fbcdn.net/v/t39.30808-6/252782846_102211005616105_3440623811260721618_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=5RFeGPOZoboAX-PNLeo&_nc_ht=video.fktm1-2.fna&oh=00_AT_JGAqLggpoHcL8xz8IQJII3Dhb-UKsNdITNtNiISsrZA&oe=62A5BFAA",
+      "https://video.fktm1-2.fna.fbcdn.net/v/t39.30808-6/252782846_102211005616105_3440623811260721618_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=RkS2vSM3O9gAX92ViKb&_nc_ht=video.fktm1-2.fna&oh=00_AT8R_gt1PB7K28R7SieiSXSeiFNHaA2PLSWXRPzIwMJhKQ&oe=62ABAE6A",
     about:
       "DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware",
     facebook: "https://facebook.com",
@@ -40,7 +40,7 @@ const teamData = [
     name: "Ujwal Bhattrai",
     post: "Investor",
     image:
-      "https://video.fktm1-1.fna.fbcdn.net/v/t39.30808-6/275298775_1829226147468644_3644190104148625840_n.jpg?stp=dst-jpg_p843x403&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=hgzJ1N2a3EMAX_LvDs2&_nc_ht=video.fktm1-1.fna&oh=00_AT8YAIp18JNPauHIZk194I3HQGZGOYnU_wWRtwK5OUAngw&oe=62A49A91",
+      "https://video.fktm1-1.fna.fbcdn.net/v/t39.30808-6/275298775_1829226147468644_3644190104148625840_n.jpg?stp=dst-jpg_p843x403&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=weiXqV1oj9YAX_-tu5D&_nc_ht=video.fktm1-1.fna&oh=00_AT_XBxrZ6xBlZQsy8TYQyAq1kwopRZjrHWIhBagMHmkYdg&oe=62AA8951",
     about:
       "DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware",
     facebook: "https://facebook.com",

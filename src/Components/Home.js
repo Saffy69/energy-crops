@@ -42,13 +42,7 @@ export default function Home() {
               distinct idea was inspired by different idols which helped us to
               reach at this stage. Take a look at few of our products -
             </p>
-            <div className="flex justify-center">
-              <Link to="/products">
-                <button className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg">
-                  View
-                </button>
-              </Link>
-            </div>
+            <div className="flex justify-center"></div>
           </div>
         </div>
       </article>

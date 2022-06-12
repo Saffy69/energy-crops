@@ -153,8 +153,12 @@ export default function Signin() {
                 Continue with Facebook
               </p>
               <button
-                onClick={() => {
-                  singInWithGoogle();
+                onClick={async () => {
+                  try {
+                    await singInWithGoogle();
+                  } catch (error) {
+                    alert(error.message);
+                  }
                 }}
                 className="px-7 py-3 text-gray-900 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
                 style={{ backgroundColor: "white" }}

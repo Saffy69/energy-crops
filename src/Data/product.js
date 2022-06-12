@@ -27,7 +27,7 @@ const productsData = [
     image: "http://127.0.0.1:5500/image2.jpeg",
     category: "Large",
     name: "Mick Shaped 3 partitions",
-    price: "$150",
+    price: "$160",
   },
   {
     id: 5,

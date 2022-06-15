@@ -1,7 +1,12 @@
 import React from "react";
 import { reducer, initialState } from "./Signin";
 import { Link } from "react-router-dom";
-import { signUp, useAuth } from "../Config/firebaseConfig";
+import {
+  signUp,
+  useAuth,
+  loginGoogle,
+  loginFacebook,
+} from "../Config/firebaseConfig";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
@@ -117,10 +122,12 @@ export default function Signin() {
                 <p className="text-center font-semibold mx-4 mb-0">OR</p>
               </div>
 
-              <a
+              <button
+                onClick={(e) => {
+                  loginFacebook(e);
+                }}
                 className="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
                 style={{ backgroundColor: "#3b5998" }}
-                href="#!"
                 role="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
@@ -136,8 +143,11 @@ export default function Signin() {
                   />
                 </svg>
                 Continue with Facebook
-              </a>
-              <p
+              </button>
+              <button
+                onClick={(e) => {
+                  loginGoogle(e);
+                }}
                 className="px-7 py-3 text-gray-900 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
                 style={{ backgroundColor: "white" }}
                 role="button"
@@ -168,7 +178,7 @@ export default function Signin() {
                   />
                 </svg>
                 Continue with Google
-              </p>
+              </button>
             </form>
           </div>
         </div>

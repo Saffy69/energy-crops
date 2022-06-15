@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import { signIn, useAuth } from "../Config/firebaseConfig.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { forgotPassword, singInWithGoogle } from "../Config/firebaseConfig.js";
+import {
+  forgotPassword,
+  loginGoogle,
+  loginFacebook,
+} from "../Config/firebaseConfig.js";
 const reducer = (state, action) => {
   switch (action.type) {
     case "SEE":
@@ -132,10 +136,12 @@ export default function Signin() {
                 <p className="text-center font-semibold mx-4 mb-0">OR</p>
               </div>
 
-              <p
+              <button
                 className="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
                 style={{ backgroundColor: "#3b5998" }}
-                href="#!"
+                onClick={(e) => {
+                  loginFacebook(e);
+                }}
                 role="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
@@ -151,14 +157,10 @@ export default function Signin() {
                   />
                 </svg>
                 Continue with Facebook
-              </p>
+              </button>
               <button
-                onClick={async () => {
-                  try {
-                    await singInWithGoogle();
-                  } catch (error) {
-                    alert(error.message);
-                  }
+                onClick={(e) => {
+                  loginGoogle(e);
                 }}
                 className="px-7 py-3 text-gray-900 font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center"
                 style={{ backgroundColor: "white" }}

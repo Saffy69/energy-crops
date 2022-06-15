@@ -9,9 +9,9 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithRedirect,
-  getRedirectResult,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 
@@ -24,26 +24,27 @@ const firebaseConfig = {
   messagingSenderId: "948574451865",
   appId: "1:948574451865:web:a9b4e33c835d8ca542e008",
 };
-const googleProvider = new GoogleAuthProvider();
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
+const facebookProvider = new FacebookAuthProvider(app);
+const googleProvider = new GoogleAuthProvider(app);
 
 export async function signUp(email, password) {
   await createUserWithEmailAndPassword(auth, email, password);
 }
 
-export function singInWithGoogle() {
-  signInWithRedirect(auth, googleProvider);
-  getRedirectResult(auth)
+export async function signIn(email, password) {
+  await signInWithEmailAndPassword(auth, email, password);
+}
+export function loginFacebook(e) {
+  e.preventDefault();
+  signInWithRedirect(auth, facebookProvider)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access Google APIs.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
-
-      // The signed-in user info.
-      const user = result.user;
     })
     .catch((error) => {
       // Handle Errors here.
@@ -51,13 +52,26 @@ export function singInWithGoogle() {
       const errorMessage = error.message;
       // The email of the user's account used.
       const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
+      // AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
       // ...
     });
 }
-export async function signIn(email, password) {
-  await signInWithEmailAndPassword(auth, email, password);
+export function loginGoogle(e) {
+  e.preventDefault();
+  signInWithRedirect(auth, googleProvider)
+    .then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+
+      alert(errorMessage);
+    });
 }
 export function logOut() {
   return signOut(auth);
